@@ -1,1 +1,6 @@
-
+initializeApp()
+getFirestore()
+setDoc()
+getDoc()
+updateDoc()
+addDoc()
