@@ -1,4 +1,4 @@
-initializeApp()
+const app = initializeApp(firebaseConfig);
 getFirestore()
 setDoc()
 getDoc()
