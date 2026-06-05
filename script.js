@@ -1,3 +1,4 @@
+// Conecta o site ao Firebase
 const app = initializeApp(firebaseConfig);
 getFirestore()
 setDoc()
