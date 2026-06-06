@@ -28,8 +28,8 @@ if (documento.exists()) {
     "R$ " + documento.data().saldoDisponivel;
 
 
-document.getElementById("saldoDisponivel").innerText =
-    "R$ " + documento.data().saldoDisponivel;
+document.getElementById("gastosHoje").innerText =
+    "R$ " + documento.data().gastosHoje;
 
 
   
