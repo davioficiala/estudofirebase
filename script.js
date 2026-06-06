@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
   getFirestore,
   doc,
-  setDoc,
   getDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -22,22 +21,18 @@ const app = initializeApp(firebaseConfig);
 // Conecta ao Firestore
 const db = getFirestore(app);
 
-// Salva teste
-await setDoc(
-  doc(db, "usuarios", "usuario1"),
-  {
-    nome: "Davi",
-    saldo: 
-  }
-);
-
 // Lê o documento
 const documento = await getDoc(
-  doc(db, "usuarios", "usuario1")
+  doc(db, "teste", "usuarios")
 );
 
 // Mostra na tela
 if (documento.exists()) {
+
   document.getElementById("saldoDisponivel").innerText =
-    "R$ " + documento.data().saldo;
+    documento.data().saldoDisponivel.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+
 }
