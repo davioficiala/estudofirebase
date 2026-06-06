@@ -32,7 +32,7 @@ document.getElementById("gastosHoje").innerText =
     "R$ " + documento.data().gastosHoje;
 
 document.getElementById("limiteDiario").innerText =
-  "R$ " + document.data().limiteDiario;
+  "R$ " + documento.data().limiteDiario;
   
 
   console.log(documento.data());
