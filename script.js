@@ -31,7 +31,8 @@ if (documento.exists()) {
 document.getElementById("gastosHoje").innerText =
     "R$ " + documento.data().gastosHoje;
 
-
+document.getElementById("limiteDiario").innerText =
+  "R$ " + document.data().limiteDiario;
   
 
   console.log(documento.data());
