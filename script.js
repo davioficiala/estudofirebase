@@ -33,6 +33,12 @@ document.getElementById("gastosHoje").innerText =
 
 document.getElementById("limiteDiario").innerText =
   "R$ " + documento.data().limiteDiario;
+
+
+document.getElementById("").innerText =
+  "R$ " + documento.data().;
+
+  
   
 
   console.log(documento.data());
