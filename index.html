@@ -1,94 +1,249 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painel Financeiro</title>
+<title>Mercado Inteligente</title>
 
 <style>
 
-body{
+*{
     margin:0;
-    padding:20px;
+    padding:0;
+    box-sizing:border-box;
     font-family:Arial,sans-serif;
-    background:#f4f4f4;
 }
 
-.summary{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+html,body{
+    overflow-y:auto;
 }
 
-.box{
+body{
+    background:#f4f5f7;
+    display:flex;
+    justify-content:center;
     padding:20px;
-    border-radius:15px;
-    color:white;
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:360px;
+    background:white;
+    border-radius:30px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo{
     text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    margin-bottom:25px;
 }
 
-.box small{
+.logo-box{
+    width:80px;
+    height:80px;
+    background:#18c25c;
+    margin:auto;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    color:white;
+}
+
+.logo h1{
+    color:#14b654;
+    font-size:38px;
+    margin-top:15px;
+}
+
+.logo h2{
+    color:#444;
+    font-weight:300;
+    letter-spacing:2px;
+}
+
+.logo p{
+    color:#777;
+    margin-top:10px;
+    font-size:15px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
     display:block;
+    margin-bottom:8px;
+    color:#333;
     font-size:14px;
-    margin-bottom:10px;
 }
 
-.box strong{
-    font-size:24px;
+.input-group input{
+    width:100%;
+    padding:16px;
+    border:none;
+    background:#f3f3f3;
+    border-radius:14px;
+    font-size:15px;
+    outline:none;
 }
 
-.green{
-    background:#2ecc71;
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    font-size:14px;
 }
 
-.red{
-    background:#e74c3c;
+.options a{
+    color:#2563eb;
+    text-decoration:none;
 }
 
-.blue{
-    background:#3498db;
+.login-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#14c25a;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.gray{
-    background:#7f8c8d;
+.login-btn:hover{
+    background:#0fa44b;
+}
+
+.social{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+}
+
+.social button{
+    flex:1;
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #ddd;
+    background:white;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.signup{
+    text-align:center;
+    margin-top:25px;
+    font-size:14px;
+}
+
+.signup a{
+    color:#14b654;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 </style>
+
 </head>
 <body>
 
-<h2>Resumo Financeiro</h2>
+<div class="container">
 
-    
-    
-<div class="summary">
+    <div class="logo">
 
-    <div class="box green">
-        <small>💰 Saldo disponível</small>
-        <strong id="saldoDisponivel">R$   </strong>
+        <div class="logo-box">
+            🛒
+        </div>
+
+        <h1>MERCADO</h1>
+
+        <h2>INTELIGENTE</h2>
+
+        <p>
+            Seu controle financeiro inteligente
+        </p>
+
     </div>
 
-    <div class="box red">
-        <small>📉 Gastos hoje</small>
-        <strong id="gastosHoje">R$  </strong>
+    <div class="input-group">
+
+        <label>Email</label>
+
+        <input 
+            type="email"
+            id="email"
+            placeholder="email@email.com"
+        >
+
     </div>
 
-    <div class="box blue">
-        <small>📘 Limite diário</small>
-        <strong id="limiteDiario">R$   </strong>
+    <div class="input-group">
+
+        <label>Senha</label>
+
+        <input 
+            type="password"
+            id="senha"
+            placeholder="••••••••"
+        >
+
     </div>
 
-    <div class="box gray">
-        <small>🧾 Restante hoje</small>
-        <strong id="restanteHoje">R$  </strong>
+    <div class="options">
+
+        <label>
+            <input type="checkbox">
+            Lembrar
+        </label>
+
+        <a href="#">
+            Esqueceu?
+        </a>
+
+    </div>
+
+    <button class="login-btn" id="loginBtn">
+        ENTRAR
+    </button>
+
+    <div class="social">
+
+        <button>
+            Google
+        </button>
+
+        <button>
+            Apple
+        </button>
+
+    </div>
+
+    <div class="signup">
+
+        Não tem conta?
+
+        <a href="criarconta.html">
+            Criar conta
+        </a>
+
     </div>
 
 </div>
 
 
-<script type="module" src="script.js"></script>
+
+
 
     
+
 </body>
 </html>
