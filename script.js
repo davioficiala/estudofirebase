@@ -35,7 +35,7 @@ document.getElementById("limiteDiario").innerText =
   "R$ " + documento.data().limiteDiario;
 
 
-document.getElementById("RestanteHoje").innerText =
+document.getElementById("restanteHoje").innerText =
   "R$ " + documento.data().restanteHoje;
 
   
