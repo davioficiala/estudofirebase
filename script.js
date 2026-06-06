@@ -27,7 +27,7 @@ await setDoc(
   doc(db, "usuarios", "usuario1"),
   {
     nome: "Davi",
-    saldo: 2000
+    saldo: 
   }
 );
 
