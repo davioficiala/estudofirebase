@@ -27,6 +27,13 @@ if (documento.exists()) {
   document.getElementById("saldoDisponivel").innerText =
     "R$ " + documento.data().saldoDisponivel;
 
+
+document.getElementById("saldoDisponivel").innerText =
+    "R$ " + documento.data().saldoDisponivel;
+
+
+  
+
   console.log(documento.data());
 
 } else {
