@@ -2,10 +2,17 @@
 const app = initializeApp(firebaseConfig);
 
 // Abre acesso ao banco de dados Firestore
-getFirestore()
+const db = getFirestore(app)
 
 // Salva ou substitui um documento
-setDoc()
+await setDoc(
+  doc(db, "usuarios", "usuario1"),
+  {
+    nome: "Davi",
+    saldo: 2000
+  }
+);
+
 
 // Busca um documento do banco
 getDoc()
