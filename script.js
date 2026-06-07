@@ -26,7 +26,7 @@ import {
 
 // PASSO 4 - Configuração Firebase
 const firebaseConfig = {
- apiKey: "AIzaSyAdirRN9nHaekNUjM3upyPTSBRVollrlMI",
+  apiKey: "AIzaSyAdirRN9nHaekNUjM3upyPTSBRVollrlMI",
   authDomain: "deus-fiel-7a2cc.firebaseapp.com",
   projectId: "deus-fiel-7a2cc",
   storageBucket: "deus-fiel-7a2cc.firebasestorage.app",
@@ -34,22 +34,21 @@ const firebaseConfig = {
   appId: "1:746071893459:web:c7a31b6e8ad49709187b26"
 };
 
-
 // PASSO 5 - Iniciar Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // PASSO 6 - Abrir Firestore
-getFirestore(app);
+const db = getFirestore(app);
 
 // PASSO 7 - Abrir Authentication
-getAuth(app);
+const auth = getAuth(app);
 
+// PASSO 8 - Referência do Documento
+const docRef = doc(db, "usuarios", "cliente1");
 
+// PASSO 9 - Ler Documento
+const documento = await getDoc(docRef);
 
-
-
-
-const documento = await getDoc(referencia);
 document.getElementById("saldoDisponivel").innerText =
 "R$ " + documento.data().saldoDisponivel;
 
@@ -62,38 +61,36 @@ document.getElementById("limiteDiario").innerText =
 document.getElementById("restanteHoje").innerText =
 "R$ " + documento.data().restanteHoje;
 
-
-
-// PASSO 9 - Salvar Documento
+// PASSO 10 - Salvar Documento
 setDoc(docRef, dados);
 
-// PASSO 10 - Atualizar Documento
+// PASSO 11 - Atualizar Documento
 updateDoc(docRef, dados);
 
-// PASSO 11 - Adicionar Documento Automático
+// PASSO 12 - Adicionar Documento Automático
 addDoc(collectionRef, dados);
 
-// PASSO 12 - Excluir Documento
+// PASSO 13 - Excluir Documento
 deleteDoc(docRef);
 
-// PASSO 13 - Criar Usuário
+// PASSO 14 - Criar Usuário
 createUserWithEmailAndPassword(auth, email, senha);
 
-// PASSO 14 - Fazer Login
+// PASSO 15 - Fazer Login
 signInWithEmailAndPassword(auth, email, senha);
 
-// PASSO 15 - Ver Usuário Logado
+// PASSO 16 - Ver Usuário Logado
 onAuthStateChanged(auth, (user) => {
 
 });
 
-// PASSO 16 - Atualizar Perfil
+// PASSO 17 - Atualizar Perfil
 updateProfile(user, {
   displayName: "Nome"
 });
 
-// PASSO 17 - Sair da Conta
+// PASSO 18 - Sair da Conta
 signOut(auth);
 
-// PASSO 18 - Excluir Usuário
+// PASSO 19 - Excluir Usuário
 deleteUser(user);
