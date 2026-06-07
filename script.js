@@ -48,6 +48,8 @@ getAuth(app);
 getDoc(docRef);
 
 
+
+
 const documento = await getDoc(referencia);
 document.getElementById("saldoDisponivel").innerText =
 "R$ " + documento.data().saldoDisponivel;
