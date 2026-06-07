@@ -26,13 +26,14 @@ import {
 
 // PASSO 4 - Configuração Firebase
 const firebaseConfig = {
-  apiKey: "...",
-  authDomain: "...",
-  projectId: "...",
-  storageBucket: "...",
-  messagingSenderId: "...",
-  appId: "..."
+ apiKey: "AIzaSyAdirRN9nHaekNUjM3upyPTSBRVollrlMI",
+  authDomain: "deus-fiel-7a2cc.firebaseapp.com",
+  projectId: "deus-fiel-7a2cc",
+  storageBucket: "deus-fiel-7a2cc.firebasestorage.app",
+  messagingSenderId: "746071893459",
+  appId: "1:746071893459:web:c7a31b6e8ad49709187b26"
 };
+
 
 // PASSO 5 - Iniciar Firebase
 initializeApp(firebaseConfig);
