@@ -1,50 +1,54 @@
+// 1 - Importações
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
   getFirestore,
   doc,
-  getDoc
+  getDoc,
+  setDoc,
+  updateDoc,
+  addDoc,
+  collection,
+  deleteDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  updateProfile,
+  deleteUser
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+// 2 - Configuração
 const firebaseConfig = {
-  apiKey: "AIzaSyAdirRN9nHaekNUjM3upyPTSBRVollrlMI",
-  authDomain: "deus-fiel-7a2cc.firebaseapp.com",
-  projectId: "deus-fiel-7a2cc",
-  storageBucket: "deus-fiel-7a2cc.firebasestorage.app",
-  messagingSenderId: "746071893459",
-  appId: "1:746071893459:web:c7a31b6e8ad49709187b26"
+  apiKey: "AIza...",
+  authDomain: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "..."
 };
 
+
+// 3 - Inicializar Firebase
 const app = initializeApp(firebaseConfig);
+
+
+// 4 - Abrir serviços
 const db = getFirestore(app);
-
-const documento = await getDoc(
-  doc(db, "teste", "usuarios")
-);
-
-if (documento.exists()) {
-
-  document.getElementById("saldoDisponivel").innerText =
-    "R$ " + documento.data().saldoDisponivel;
+const auth = getAuth(app);
 
 
-document.getElementById("gastosHoje").innerText =
-    "R$ " + documento.data().gastosHoje;
+// 5 - Usar funções
+getDoc(docRef);
+setDoc(docRef, dados);
+updateDoc(docRef, dados);
 
-document.getElementById("limiteDiario").innerText =
-  "R$ " + documento.data().limiteDiario;
+createUserWithEmailAndPassword(auth, email, senha);
+signInWithEmailAndPassword(auth, email, senha);
 
-
-document.getElementById("restanteHoje").innerText =
-  "R$ " + documento.data().restanteHoje;
-
-  
-  
-
-  console.log(documento.data());
-
-} else {
-
-  console.log("Documento não encontrado");
-
-}
+signOut(auth);
