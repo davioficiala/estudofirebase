@@ -47,6 +47,21 @@ getAuth(app);
 // PASSO 8 - Ler Documento
 getDoc(docRef);
 
+const documento = await getDoc(referencia);
+document.getElementById("saldoDisponivel").innerText =
+"R$ " + documento.data().saldoDisponivel;
+
+document.getElementById("gastosHoje").innerText =
+"R$ " + documento.data().gastosHoje;
+
+document.getElementById("limiteDiario").innerText =
+"R$ " + documento.data().limiteDiario;
+
+document.getElementById("restanteHoje").innerText =
+"R$ " + documento.data().restanteHoje;
+
+
+
 // PASSO 9 - Salvar Documento
 setDoc(docRef, dados);
 
