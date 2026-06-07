@@ -47,6 +47,7 @@ getAuth(app);
 // PASSO 8 - Ler Documento
 getDoc(docRef);
 
+
 const documento = await getDoc(referencia);
 document.getElementById("saldoDisponivel").innerText =
 "R$ " + documento.data().saldoDisponivel;
