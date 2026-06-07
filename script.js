@@ -44,8 +44,7 @@ getFirestore(app);
 // PASSO 7 - Abrir Authentication
 getAuth(app);
 
-// PASSO 8 - Ler Documento
-getDoc(docRef);
+
 
 
 
