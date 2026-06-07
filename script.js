@@ -1,6 +1,7 @@
-// 1 - Importações
+// PASSO 1 - Importar Firebase App
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
+// PASSO 2 - Importar Firestore
 import {
   getFirestore,
   doc,
@@ -12,6 +13,7 @@ import {
   deleteDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+// PASSO 3 - Importar Authentication
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -22,10 +24,9 @@ import {
   deleteUser
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-
-// 2 - Configuração
+// PASSO 4 - Configuração Firebase
 const firebaseConfig = {
-  apiKey: "AIza...",
+  apiKey: "...",
   authDomain: "...",
   projectId: "...",
   storageBucket: "...",
@@ -33,22 +34,48 @@ const firebaseConfig = {
   appId: "..."
 };
 
+// PASSO 5 - Iniciar Firebase
+initializeApp(firebaseConfig);
 
-// 3 - Inicializar Firebase
-const app = initializeApp(firebaseConfig);
+// PASSO 6 - Abrir Firestore
+getFirestore(app);
 
+// PASSO 7 - Abrir Authentication
+getAuth(app);
 
-// 4 - Abrir serviços
-const db = getFirestore(app);
-const auth = getAuth(app);
-
-
-// 5 - Usar funções
+// PASSO 8 - Ler Documento
 getDoc(docRef);
+
+// PASSO 9 - Salvar Documento
 setDoc(docRef, dados);
+
+// PASSO 10 - Atualizar Documento
 updateDoc(docRef, dados);
 
+// PASSO 11 - Adicionar Documento Automático
+addDoc(collectionRef, dados);
+
+// PASSO 12 - Excluir Documento
+deleteDoc(docRef);
+
+// PASSO 13 - Criar Usuário
 createUserWithEmailAndPassword(auth, email, senha);
+
+// PASSO 14 - Fazer Login
 signInWithEmailAndPassword(auth, email, senha);
 
+// PASSO 15 - Ver Usuário Logado
+onAuthStateChanged(auth, (user) => {
+
+});
+
+// PASSO 16 - Atualizar Perfil
+updateProfile(user, {
+  displayName: "Nome"
+});
+
+// PASSO 17 - Sair da Conta
 signOut(auth);
+
+// PASSO 18 - Excluir Usuário
+deleteUser(user);
