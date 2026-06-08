@@ -14,6 +14,58 @@ body{
     background:#f4f4f4;
 }
 
+.authCard{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.authCard h2{
+    margin-top:0;
+    text-align:center;
+}
+
+.authCard input{
+    width:100%;
+    padding:15px;
+    margin-bottom:10px;
+    border:none;
+    border-radius:12px;
+    background:#f0f0f0;
+    box-sizing:border-box;
+}
+
+.botoesAuth{
+    display:flex;
+    gap:10px;
+}
+
+.botoesAuth button{
+    flex:1;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+}
+
+#btnCadastrar{
+    background:#2ecc71;
+}
+
+#btnLogin{
+    background:#3498db;
+}
+
+#statusAuth{
+    text-align:center;
+    margin-top:10px;
+    font-weight:bold;
+}
+
 .summary{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -38,57 +90,61 @@ body{
     font-size:24px;
 }
 
-.green{
-    background:#2ecc71;
-}
-
-.red{
-    background:#e74c3c;
-}
-
-.blue{
-    background:#3498db;
-}
-
-.gray{
-    background:#7f8c8d;
-}
+.green{background:#2ecc71;}
+.red{background:#e74c3c;}
+.blue{background:#3498db;}
+.gray{background:#7f8c8d;}
 
 </style>
 </head>
 <body>
 
+<div class="authCard">
+
+    <h2>🔐 Login / Cadastro</h2>
+
+    <input type="text" id="nome" placeholder="Nome">
+
+    <input type="email" id="email" placeholder="E-mail">
+
+    <input type="password" id="senha" placeholder="Senha">
+
+    <div class="botoesAuth">
+        <button id="btnCadastrar">Criar Conta</button>
+        <button id="btnLogin">Entrar</button>
+    </div>
+
+    <p id="statusAuth"></p>
+
+</div>
+
 <h2>Resumo Financeiro</h2>
 
-    
-    
 <div class="summary">
 
     <div class="box green">
         <small>💰 Saldo disponível</small>
-        <strong id="saldoDisponivel">R$   </strong>
+        <strong id="saldoDisponivel">R$</strong>
     </div>
 
     <div class="box red">
         <small>📉 Gastos hoje</small>
-        <strong id="gastosHoje">R$  </strong>
+        <strong id="gastosHoje">R$</strong>
     </div>
 
     <div class="box blue">
         <small>📘 Limite diário</small>
-        <strong id="limiteDiario">R$   </strong>
+        <strong id="limiteDiario">R$</strong>
     </div>
 
     <div class="box gray">
         <small>🧾 Restante hoje</small>
-        <strong id="restanteHoje">R$  </strong>
+        <strong id="restanteHoje">R$</strong>
     </div>
 
 </div>
 
-
 <script type="module" src="script.js"></script>
 
-    
 </body>
 </html>
